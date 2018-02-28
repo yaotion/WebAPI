@@ -1,0 +1,916 @@
+<?xml version="1.0"?>
+<WebAPI>
+  <Project SavePath="E:\姚新\TestAPILib\" NameSpace="TF.ZCZT.Interface" Version="1.1.1.1113" ProjectName="值乘状态分析系统" CodePath="" TestAddress="localhost:8021" DefaultDBName="DBTrainmanWorkStatus17571" strSuccess="Success" strResultText="ResultText" strItems="Items" strSuccessMark="1" strFailureMark="0">
+    <DataList>
+      <DataGategory IsSystem="False" CategoryName="Entity" CategoryBrief="数据记录">
+        <DataObject ObjectName="View_Dat_TrainTasks" ObjectBrief="机车出勤记录" ObjectRemark="" TypeName="Dat_TrainTasks" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainTypeCode" ObjectBrief="车型代号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainmanNumber" ObjectBrief="司机号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtFirstEventTime" ObjectBrief="第一条运行记录事件时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="dtLastEventTime" ObjectBrief="最后一个运行记录时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strLongitude" ObjectBrief="机车当前经度" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strLatitude" ObjectBrief="机车当前纬度" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtHeartbeatTime" ObjectBrief="心跳帧时间,如果超过3分钟没有心跳,就认为离线" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strDeviceNumber" ObjectBrief="设备编号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSubTrainmanNumber" ObjectBrief="副司机工号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainmanName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="TrainCaveatCount" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="TrainRuntimeCount" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="fSpeed" ObjectBrief="" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="strPictureFileName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nGLB" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strSubPictureFileName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSubTrainmanName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="View_Dat_TrainTasksList" ObjectBrief="机车出勤记录列表" ObjectRemark="" TypeName="View_Dat_TrainTasks" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+        <DataObject ObjectName="StatisticsItem" ObjectBrief="统计项点" ObjectRemark="" TypeName="" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="ItemName" ObjectBrief="属性名称" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="ItemCount" ObjectBrief="总数" ObjectRemark="" TypeName="int"/>
+        </DataObject>
+        <DataObject ObjectName="StatisticsItemList" ObjectBrief="统计项点列表" ObjectRemark="" TypeName="StatisticsItem" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="LiangWei" CategoryBrief="两违">
+        <DataObject ObjectName="Dat_LiangWei" ObjectBrief="两违" ObjectRemark="" TypeName="Dat_LiangWei" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSectionNo" ObjectBrief="区段号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strStationNo" ObjectBrief="车站号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtEventTime" ObjectBrief="时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strScrutator" ObjectBrief="考核人" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainManNumber" ObjectBrief="被考核人" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strQuestionStrID" ObjectBrief="问题性质" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strMark" ObjectBrief="备注" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strCaveatID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="Dat_LiangWeiList" ObjectBrief="两违列表" ObjectRemark="" TypeName="Dat_LiangWei" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="RuntimeInfo" CategoryBrief="运行记录">
+        <DataObject ObjectName="Dat_TrainRuntime" ObjectBrief="机车运行记录信息" ObjectRemark="" TypeName="Dat_TrainRuntime" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtEventTime" ObjectBrief="运行记录事件时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNumber" ObjectBrief="机车号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainCode" ObjectBrief="车型代号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainmanNumber" ObjectBrief="司机号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSubTrainmanNumber" ObjectBrief="副司机号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSectionNo" ObjectBrief="区段号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strStationNo" ObjectBrief="车站号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="fSpeed" ObjectBrief="时速" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="fLimitSpeed" ObjectBrief="限速" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="nSignal" ObjectBrief="机车信号,1:绿灯,2:黄灯,3双黄灯,4红黄灯,5红灯,6白灯,7绿黄灯,8黄2灯" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nHandlePosition" ObjectBrief="手柄位置,0为非零，1为零位" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nTrainPosition" ObjectBrief="车位,0为空，1为向后，2为向前" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nTowState" ObjectBrief="牵引状态，0为空，1为牵引" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nBrakeState" ObjectBrief="制动状态，0为空，1为制动" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strSignalMachineNumber" ObjectBrief="信号机编号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nSignalMachineType" ObjectBrief="信号机种类,02:出站；03:进站；04:通过；05:预告；06:容许" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nGLB" ObjectBrief="公里标" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="fMaxWeight" ObjectBrief="最大重量" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="fMaxLength" ObjectBrief="最大计长" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="nMaxCount" ObjectBrief="最大辆数" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nBenBu" ObjectBrief="本务/补机，0为本务，1为补机" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nKeHuo" ObjectBrief="客货,0为客车,1为货车" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="fLieCheGuanYaLi" ObjectBrief="列车管压力" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="fZhiDongGangYaLi" ObjectBrief="制动缸压力" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="strLongitude" ObjectBrief="报警时的经度" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strLatitude" ObjectBrief="报警时的纬度" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strDeviceNumber" ObjectBrief="设备编号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nJianKongState" ObjectBrief="监控状态" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nChaiSu" ObjectBrief="柴速" ObjectRemark="" TypeName="int"/>
+        </DataObject>
+        <DataObject ObjectName="Dat_TrainRuntimeList" ObjectBrief="机车运行记录信息列表" ObjectRemark="" TypeName="Dat_TrainRuntime" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="TrainCaveat" CategoryBrief="报警记录">
+        <DataObject ObjectName="VIEW_Dat_TrainCaveat" ObjectBrief="报警记录" ObjectRemark="" TypeName="VIEW_Dat_TrainCaveat" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="dtCaveatTime" ObjectBrief="" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strTasksID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nIsConfirm" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="dtConfirmTme" ObjectBrief="" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strConfirmUserNumber" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strRuntimeID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strVideoFileName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strConfirmUserName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nCaveatCode" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strCaveatText" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNumber" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNo" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainmanNumber" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainmanName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strPictureFileName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nGLB" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="fSpeed" ObjectBrief="" ObjectRemark="" TypeName="float"/>
+          <PropertyObject ObjectName="nIsReady" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strSubTrainmanNumber" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSubTrainmanName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nCaveatLevel" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strLevelColor" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strStationNo" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strSectionNo" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="stationName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strLineName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nOpinionType" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strLatitude" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strLongitude" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="CaveatType" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nFavorite" ObjectBrief="是否已收藏 1是 0否" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strMark" ObjectBrief="备注" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="VIEW_Dat_TrainCaveatList" ObjectBrief="报警记录列表" ObjectRemark="" TypeName="VIEW_Dat_TrainCaveat" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+        <DataObject ObjectName="Dic_StaffInfo" ObjectBrief="人员信息" ObjectRemark="" TypeName="Dic_StaffInfo" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strNumber" ObjectBrief="人员工号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strName" ObjectBrief="人员姓名" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strDuty" ObjectBrief="职务" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strPassword" ObjectBrief="系统登陆密码" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strPictureFileName" ObjectBrief="人员照片名称" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtTokenTime" ObjectBrief="令牌时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="dtLoginTime" ObjectBrief="最后登录时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strTokenID" ObjectBrief="令牌id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nRoleID" ObjectBrief="角色" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strUnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="Dic_StaffInfoList" ObjectBrief="人员信息列表" ObjectRemark="" TypeName="Dic_StaffInfo" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+        <DataObject ObjectName="Dat_TrainCaveat" ObjectBrief="机车报警记录" ObjectRemark="" TypeName="Dat_TrainCaveat" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtCaveatTime" ObjectBrief="报警时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="nCaveatCode" ObjectBrief="报警代码" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTasksID" ObjectBrief="机车出勤记录ID" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nIsConfirm" ObjectBrief="是否确认0为否，1为是" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="dtConfirmTme" ObjectBrief="确认时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strConfirmUserNumber" ObjectBrief="确认人工号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strRuntimeID" ObjectBrief="运行记录ID" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strVideoFileName" ObjectBrief="视频文件名称" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nIsReady" ObjectBrief="是否就绪,0为否,1为是，否的话表示视频还没有处理完毕" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="nOpinionType" ObjectBrief="意见类型 1误报 2两违问题" ObjectRemark="" TypeName="int"/>
+        </DataObject>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="RegRangeList" CategoryBrief="报警范围记录列表">
+        <DataObject ObjectName="CaveatPushRange" ObjectBrief="车间id" ObjectRemark="" TypeName="CaveatPushRange" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strWorkShopID" ObjectBrief="车间id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTeamID" ObjectBrief="车队id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strWorkGroupID" ObjectBrief="指导组id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strUserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="CaveatPushRangeList" ObjectBrief="车间id列表" ObjectRemark="" TypeName="CaveatPushRange" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="RunTrackRecord" CategoryBrief="运行轨迹">
+        <DataObject ObjectName="Dat_RunTrackRecord" ObjectBrief="车型" ObjectRemark="" TypeName="Dat_RunTrackRecord" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNum" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strLongitude" ObjectBrief="经度" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strLatitude" ObjectBrief="纬度" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtPostTime" ObjectBrief="时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strJiCheID" ObjectBrief="机车id" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="Dat_RunTrackRecordList" ObjectBrief="车型列表" ObjectRemark="" TypeName="Dat_RunTrackRecord" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="报警收藏" CategoryBrief="报警收藏">
+        <DataObject ObjectName="UserFavoriteCaveat" ObjectBrief="用户id" ObjectRemark="" TypeName="UserFavoriteCaveat" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strCaveatID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtDateTime" ObjectBrief="时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strMark" ObjectBrief="备注" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="UserFavoriteCaveatList" ObjectBrief="用户id列表" ObjectRemark="" TypeName="UserFavoriteCaveat" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="关注机车报警" CategoryBrief="关注机车报警">
+        <DataObject ObjectName="TrainAttention" ObjectBrief="车型" ObjectRemark="" TypeName="TrainAttention" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="TrainAttentionList" ObjectBrief="车型列表" ObjectRemark="" TypeName="TrainAttention" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="关注人员报警" CategoryBrief="关注人员报警">
+        <DataObject ObjectName="TrainerAttention" ObjectBrief="用户id" ObjectRemark="" TypeName="TrainerAttention" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="AttentionUserNumber" ObjectBrief="关注的用户id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="AttentionUserName" ObjectBrief="关注人姓名" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strPictureFileName" ObjectBrief="关注人照片" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="TrainerAttentionList" ObjectBrief="用户id列表" ObjectRemark="" TypeName="TrainerAttention" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="基础数据" CategoryBrief="基础数据">
+        <DataObject ObjectName="Dic_TrainType" ObjectBrief="车型" ObjectRemark="" TypeName="Dic_Train" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="Dic_TrainTypeList" ObjectBrief="车型列表" ObjectRemark="" TypeName="Dic_TrainType" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="设备信息" CategoryBrief="设备信息">
+        <DataObject ObjectName="DeviceInfo" ObjectBrief="车载装置信息" ObjectRemark="" TypeName="DeviceInfo" TypeSort="1" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51">
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strDeviceNumber" ObjectBrief="车载装置编号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strBelongUnit" ObjectBrief="归属单位" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strMainVersion" ObjectBrief="主机版本号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strABVersion" ObjectBrief="AB机版本号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="SideANetState" ObjectBrief="A机网络状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="SideBNetState" ObjectBrief="B机网络状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="CameraAState" ObjectBrief="A机图象分析装置状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="CameraBState" ObjectBrief="B机图象分析装置状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="SideAVideoDevice" ObjectBrief="A机摄像头状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="SideBVideoDevice" ObjectBrief="B机摄像头状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="MONETState" ObjectBrief="3G状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="SDCardState" ObjectBrief="SD卡状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="WiFiState" ObjectBrief="WIFI卡状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="LocateDeviceState" ObjectBrief="北斗模块状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="CurrentSide" ObjectBrief="当前有效端状态" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="CurMode" ObjectBrief="当前运行模式" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strNewMainVersion" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strNewABVersion" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strNewMainName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strNewABName" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="bPlayRequest" ObjectBrief="是否播放 20播放 0否" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="bIsReady" ObjectBrief="是否就绪 1就绪0否" ObjectRemark="" TypeName="int"/>
+        </DataObject>
+        <DataObject ObjectName="DeviceInfoList" ObjectBrief="车载装置信息列表" ObjectRemark="" TypeName="DeviceInfo" TypeSort="2" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51"/>
+        <DataObject ObjectName="DeviceOption" ObjectBrief="系统音量大小" ObjectRemark="" TypeName="DeviceOption" TypeSort="1" CreateDate="1899-12-30 00:00:00" ModifyDate="1899-12-30 00:00:00">
+          <PropertyObject ObjectName="PlaybackVolume" ObjectBrief="系统音量大小" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="WorkModeFatigueCount1" ObjectBrief="疲劳检测时间1" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="WorkModePostureCount" ObjectBrief="离岗检测时间" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="WebServerUrl" ObjectBrief="连接服务器地址" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="WebServerFileUrl" ObjectBrief="上传文件服务器地址" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="MaxNumRecords" ObjectBrief="数据库中最多保存记录数" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="SSID" ObjectBrief="WIFI的 SSID" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="PassWord" ObjectBrief="wifi密码" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="UseIp" ObjectBrief="ip地址" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="nID" ObjectBrief="" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="WorkModeFatigueCount2" ObjectBrief="疲劳检测时间2" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="WorkModeFatigueCount3" ObjectBrief="疲劳检测时间3" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="WorkModeShieldCount" ObjectBrief="遮挡判定时间" ObjectRemark="" TypeName="int"/>
+          <PropertyObject ObjectName="UploadFileName" ObjectBrief="需要上传的文件名" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="DeviceOptionList" ObjectBrief="系统音量大小列表" ObjectRemark="" TypeName="DeviceOption" TypeSort="2" CreateDate="1899-12-30 00:00:00" ModifyDate="1899-12-30 00:00:00"/>
+      </DataGategory>
+      <DataGategory IsSystem="False" CategoryName="关键事件" CategoryBrief="关键事件">
+        <DataObject ObjectName="Dat_ImportEvent" ObjectBrief="运行记录id" ObjectRemark="" TypeName="Dat_ImportEvent" TypeSort="1" CreateDate="1899-12-30 00:00:00" ModifyDate="1899-12-30 00:00:00">
+          <PropertyObject ObjectName="strRunTimeID" ObjectBrief="运行记录id" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="strEventType" ObjectBrief="事件类型" ObjectRemark="" TypeName="string"/>
+          <PropertyObject ObjectName="dtEventTime" ObjectBrief="事件时间" ObjectRemark="" TypeName="DateTime"/>
+          <PropertyObject ObjectName="strVideoFileName" ObjectBrief="视频文件名称" ObjectRemark="" TypeName="string"/>
+        </DataObject>
+        <DataObject ObjectName="Dat_ImportEventList" ObjectBrief="运行记录id列表" ObjectRemark="" TypeName="Dat_ImportEvent" TypeSort="2" CreateDate="1899-12-30 00:00:00" ModifyDate="1899-12-30 00:00:00"/>
+      </DataGategory>
+    </DataList>
+    <APIList>
+      <APIType TypeBrief="记录操作" TypeOrder="0" AssemblyName="TF.ZCZT.Interface.RecordManage" TypeName="">
+        <APIItem APIBrief="获得在线机车" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainTasks.GetOnlineTrian" APIVersion="" TypeName="IFTrainTasks" TableName="" MethodName="GetOnlineTrian">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="page" ObjectBrief="页码" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="rows" ObjectBrief="行数" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="dtBeginTime" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="dtEndTime" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="Total" ObjectBrief="数量" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="TraintasksList" ObjectBrief="机车信息" ObjectRemark="" TypeName="View_Dat_TrainTasksList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获得运行记录信息" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFRuntimeInfo.GetRuntimeInfo" APIVersion="" TypeName="IFRuntimeInfo" TableName="" MethodName="GetRuntimeInfo">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strTasksID" ObjectBrief="机车出勤记录ID" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="Page" ObjectBrief="当前页" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="Rows" ObjectBrief="页显示条数" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strID" ObjectBrief="运行记录id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="Total" ObjectBrief="数量" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="TrainRuntimeList" ObjectBrief="运行记录集合" ObjectRemark="" TypeName="Dat_TrainRuntimeList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获得机车报警记录" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainCaveat.GetTrainCaveat" APIVersion="" TypeName="IFTrainCaveat" TableName="" MethodName="GetTrainCaveat">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strTasksID" ObjectBrief="机车出勤记录ID" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="Page" ObjectBrief="当前页" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="Rows" ObjectBrief="页显示条数" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainmanNumber" ObjectBrief="司机工号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainmanName" ObjectBrief="司机姓名" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strCaveatCodeList" ObjectBrief="报警类型集合" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="dtBeginTime" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="dtEndTime" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strID" ObjectBrief="报警id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="Total" ObjectBrief="数量" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="TrainCaveatList" ObjectBrief="报警集合" ObjectRemark="" TypeName="VIEW_Dat_TrainCaveatList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="保存运行记录信息" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFRuntimeInfo.SaveRuntimeInfo" APIVersion="" TypeName="IFRuntimeInfo" TableName="" MethodName="SaveRuntimeInfo">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="RuntimeRecords" ObjectBrief="运行记录集合" ObjectRemark="" TypeName="Dat_TrainRuntimeList"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="保存报警记录" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-08-29 13:34:05" APIName="TF.ZCZT.Interface.IFTrainCaveat.SaveTrainCaveat" APIVersion="" TypeName="IFTrainCaveat" TableName="" MethodName="SaveTrainCaveat">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_Dat_TrainCaveat" ObjectName="dtCaveatTime" ObjectBrief="报警时间" ObjectRemark="" TypeName="DateTime"/>
+            <PropertyObject TableName="TAB_Dat_TrainCaveat" ObjectName="nCaveatCode" ObjectBrief="报警代码" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="TAB_Dat_TrainCaveat" ObjectName="strRuntimeID" ObjectBrief="运行记录ID" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_TrainCaveat" ObjectName="strVideoFileName" ObjectBrief="视频文件名称" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="RuntimeInfo" ObjectBrief="运行记录" ObjectRemark="" TypeName="Dat_TrainRuntime"/>
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_TrainCaveat" ObjectName="strAlarmNote" ObjectBrief="报警字段信息备注" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="更新心跳接口" CreateDate="2015-11-10 17:33:51" ModifyDate="2016-10-17 14:36:34" APIName="TF.ZCZT.Interface.IFTrainTasks.UpdateHeartTime" APIVersion="" TypeName="IFTrainTasks" TableName="" MethodName="UpdateHeartTime">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strTrainTypeCode" ObjectBrief="车型代码" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strLongitude" ObjectBrief="经度" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strLatitude" ObjectBrief="纬度" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainmanNumber" ObjectBrief="司机号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strCaveatCode" ObjectBrief="报警代码" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strCaveatRemark" ObjectBrief="报警备注" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="DeviceOption" ObjectBrief="设备属性" ObjectRemark="" TypeName="DeviceOption"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="报警提醒接口" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainCaveat.PushTrainCaveat" APIVersion="" TypeName="IFTrainCaveat" TableName="" MethodName="PushTrainCaveat">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strTrainCaveatID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取历史机车出勤记录表信息列表" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainTasks.GetHistoryTrainTasks" APIVersion="" TypeName="IFTrainTasks" TableName="" MethodName="GetHistoryTrainTasks">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strBeginDate" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strEndDate" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="page" ObjectBrief="当前页" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="rows" ObjectBrief="显示行数" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTasksID" ObjectBrief="机车id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TraintasksList" ObjectBrief="TraintasksList" ObjectRemark="" TypeName="View_Dat_TrainTasksList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="保存两违问题记录" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFDat_LiangWei.SaveLiangWei" APIVersion="" TypeName="IFDat_LiangWei" TableName="" MethodName="SaveLiangWei">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strSectionNo" ObjectBrief="区段号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strStationNo" ObjectBrief="车站号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="dtEventTime" ObjectBrief="时间" ObjectRemark="" TypeName="DateTime"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strScrutator" ObjectBrief="考核人" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strTrainManNumber" ObjectBrief="被考核人" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strQuestionStrID" ObjectBrief="问题性质" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strMark" ObjectBrief="备注" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_LiangWei" ObjectName="strCaveatID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strConfirmUserNumber" ObjectBrief="确认人工号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="nOpinionType" ObjectBrief="意见类型 1误报 2两违问题" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取设备参数" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFDeviceOption.GetDeviceOption" APIVersion="" TypeName="IFDeviceOption" TableName="" MethodName="GetDeviceOption">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="报警推送注册登记" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFPush.CaveatPushReg" APIVersion="" TypeName="IFPush" TableName="" MethodName="CaveatPushReg">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="RegID" ObjectBrief="注册id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="报警推送范围登记" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFPush.CaveatPushRangeReg" APIVersion="" TypeName="IFPush" TableName="" MethodName="CaveatPushRangeReg">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="CaveatPushRangeList" ObjectBrief="报警推送范围列表" ObjectRemark="" TypeName="CaveatPushRangeList"/>
+            <PropertyObject TableName="" ObjectName="strClearUserID" ObjectBrief="清空用户记录" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="风险时段统计" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-16 09:01:28" APIName="TF.ZCZT.Interface.IFStatistics.GetFxsdTotal" APIVersion="" TypeName="IFStatistics" TableName="" MethodName="GetFxsdTotal">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strBeginDate" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strEndDate" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="ItemList" ObjectBrief="统计结果" ObjectRemark="" TypeName="StatisticsItemList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="典型问题统计" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFStatistics.GetDxwtTotal" APIVersion="" TypeName="IFStatistics" TableName="" MethodName="GetDxwtTotal">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strBeginDate" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strEndDate" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="ItemList" ObjectBrief="统计结果" ObjectRemark="" TypeName="StatisticsItemList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="关键地点统计" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-16 09:05:12" APIName="TF.ZCZT.Interface.IFStatistics.GetGjddTotal" APIVersion="" TypeName="IFStatistics" TableName="" MethodName="GetGjddTotal">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strBeginDate" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strEndDate" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="ItemList" ObjectBrief="统计结果" ObjectRemark="" TypeName="StatisticsItemList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="乘务员统计" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-16 09:05:16" APIName="TF.ZCZT.Interface.IFStatistics.GetCwyTotal" APIVersion="" TypeName="IFStatistics" TableName="" MethodName="GetCwyTotal">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strBeginDate" ObjectBrief="开始时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strEndDate" ObjectBrief="结束时间" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="ItemList" ObjectBrief="统计结果" ObjectRemark="" TypeName="StatisticsItemList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取运行轨迹" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFRunTrackRecord.GetRunTrackRecord" APIVersion="" TypeName="IFRunTrackRecord" TableName="" MethodName="GetRunTrackRecord">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strJiCheID" ObjectBrief="机车id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="RunTrackRecordList" ObjectBrief="运行轨迹" ObjectRemark="" TypeName="Dat_RunTrackRecordList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取两违记录" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFDat_LiangWei.GetLiangWeiList" APIVersion="" TypeName="IFDat_LiangWei" TableName="" MethodName="GetLiangWeiList">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strCaveatID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="Dat_LiangWei" ObjectBrief="两违类" ObjectRemark="" TypeName="Dat_LiangWei"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取设备信息" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-25 10:56:24" APIName="TF.ZCZT.Interface.IFDeviceOption.GetDeviceInfo" APIVersion="" TypeName="IFDeviceOption" TableName="" MethodName="GetDeviceInfo">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainCode" ObjectBrief="车型代码" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="DeviceInfo" ObjectBrief="设备属性" ObjectRemark="" TypeName="DeviceInfo"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="保存关键事件" CreateDate="2016-10-27 09:33:31" ModifyDate="2016-12-09 10:55:10" APIName="TF.ZCZT.Interface.IFImportantEvent.Save" APIVersion="" TypeName="IFImportantEvent" TableName="" MethodName="Save">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="ImportantEventModel" ObjectBrief="关键事件模型" ObjectRemark="" TypeName="Dat_ImportEvent"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="更新心跳接口AV4" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-08-18 10:27:06" APIName="TF.ZCZT.Interface.IFTrainTasks.UpdateHeartTime_AV4" APIVersion="" TypeName="IFTrainTasks" TableName="" MethodName="UpdateHeartTime_AV4">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="Camera1State" ObjectBrief="1端采集器状态" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="Camera2State" ObjectBrief="2端采集器状态" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="SDCardState" ObjectBrief="SD卡" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="diskFreeSpace" ObjectBrief="磁盘容量" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="CurrentSide" ObjectBrief="当前有效端" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="CurMode" ObjectBrief="工作模式" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备编号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainTypeCode" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="Camera3State" ObjectBrief="3端采集器状态" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="Camera4State" ObjectBrief="4端采集器状态" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="Av4ExpState" ObjectBrief="av4扩展 状态" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="更新心跳接口AV4EXP" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-08-18 10:27:16" APIName="TF.ZCZT.Interface.IFTrainTasks.UpdateHeartTime_AV4EXP" APIVersion="" TypeName="IFTrainTasks" TableName="" MethodName="UpdateHeartTime_AV4EXP">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备编号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainTypeCode" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="av4State" ObjectBrief="Av4状态" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strLatitude" ObjectBrief="经度" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strLongitude" ObjectBrief="纬度" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="WiFiState" ObjectBrief="WIFi状态" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="SignalLevel" ObjectBrief="3G信号强度" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="LocateDeviceState" ObjectBrief="北斗模块设备状态" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="保存项点记录" CreateDate="2017-07-18 13:25:02" ModifyDate="2017-07-18 13:26:53" APIName="TF.ZCZT.Interface.IAnalysisItem.Save" APIVersion="" TypeName="IAnalysisItem" TableName="" MethodName="Save">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strID" ObjectBrief="" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strAnalysisNumber" ObjectBrief="项点编号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="dtTime" ObjectBrief="时间" ObjectRemark="" TypeName="DateTime"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strTrainmanNumber" ObjectBrief="司机号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strSubTrainmanNumber" ObjectBrief="副司机号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_AnalysisItem" ObjectName="strTrainNo" ObjectBrief="车次" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+      </APIType>
+      <APIType TypeBrief="系统管理类" TypeOrder="0" AssemblyName="TF.ZCZT.Interface.SystemManage" TypeName="">
+        <APIItem APIBrief="用户登录验证" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-02-16 10:23:11" APIName="TF.ZCZT.Interface.IFUser.LoginIn" APIVersion="" TypeName="IFUser" TableName="" MethodName="LoginIn">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strNumber" ObjectBrief="工号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strPassword" ObjectBrief="密码" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strIdentityID" ObjectBrief="身份id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="allowLogin" ObjectBrief="允许登录" ObjectRemark="0不允许
+1允许" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="UserInfoJson" ObjectBrief="用户信息" ObjectRemark="" TypeName="Dic_StaffInfoList"/>
+            <PropertyObject TableName="" ObjectName="strMessage" ObjectBrief="提示信息" ObjectRemark="" TypeName="string"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="修改用户登录密码" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFUser.ResetPassword" APIVersion="" TypeName="IFUser" TableName="" MethodName="ResetPassword">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="beforePassword" ObjectBrief="原密码" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="newPassword" ObjectBrief="新密码" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strNumber" ObjectBrief="工号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="ResetSuccess" ObjectBrief="是否重置成功" ObjectRemark="" TypeName="int"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="基础数据同步" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFBasicDataSynchronization.SynchronizationBasicData" APIVersion="" TypeName="IFBasicDataSynchronization" TableName="" MethodName="SynchronizationBasicData">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TableName" ObjectBrief="表名称" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取车型" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainType.GetTrainType" APIVersion="" TypeName="IFTrainType" TableName="" MethodName="GetTrainType">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UnitID" ObjectBrief="机务段id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="DicTrainTypeList" ObjectBrief="车型列表" ObjectRemark="" TypeName="Dic_TrainTypeList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="返回设备命令接口" CreateDate="2015-11-10 17:33:51" ModifyDate="2016-12-09 17:47:07" APIName="TF.ZCZT.Interface.ServerCMD.GetServerCMD" APIVersion="" TypeName="ServerCMD" TableName="" MethodName="GetServerCMD">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="nDeviceType" ObjectBrief="设备类型" ObjectRemark="" TypeName="int"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_Dat_ServerCMD" ObjectName="nCMDType" ObjectBrief="命令类型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_ServerCMD" ObjectName="strParam1" ObjectBrief="附加参数1" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_ServerCMD" ObjectName="strParam2" ObjectBrief="附加参数2" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_Dat_ServerCMD" ObjectName="dtInputTime" ObjectBrief="发布时间" ObjectRemark="" TypeName="DateTime"/>
+            <PropertyObject TableName="" ObjectName="strID" ObjectBrief="命令id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="nDeviceType" ObjectBrief="设备类型" ObjectRemark="" TypeName="int"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="接收执行结果" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.ServerCMD.SaveCMDResult" APIVersion="" TypeName="ServerCMD" TableName="" MethodName="SaveCMDResult">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strID" ObjectBrief="命令id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="nResult" ObjectBrief="执行结果" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strResult" ObjectBrief="执行结果字符串" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="app用户注册" CreateDate="2017-02-16 10:18:52" ModifyDate="2017-02-16 10:22:43" APIName="TF.ZCZT.Interface.IFUser.AppUserRegAdd" APIVersion="" TypeName="IFUser" TableName="" MethodName="AppUserRegAdd">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strUserName" ObjectBrief="用户名" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strDescribe" ObjectBrief="描述" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strIdentityID" ObjectBrief="身份id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+      </APIType>
+      <APIType TypeBrief="报警" TypeOrder="0" AssemblyName="TF.ZCZT.Interface.TrainCaveat" TypeName="">
+        <APIItem APIBrief="添加报警收藏" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainCaveatFavorite.AddFavoriteCaveat" APIVersion="" TypeName="IFTrainCaveatFavorite" TableName="" MethodName="AddFavoriteCaveat">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserFavoriteCaveatList" ObjectBrief="用户报警收藏类" ObjectRemark="" TypeName="UserFavoriteCaveat"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="移除报警收藏" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainCaveatFavorite.DeleteFavoriteCaveat" APIVersion="" TypeName="IFTrainCaveatFavorite" TableName="" MethodName="DeleteFavoriteCaveat">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strCaveatID" ObjectBrief="报警记录id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取收藏报警" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFTrainCaveatFavorite.GetFavoriteCaveat" APIVersion="" TypeName="IFTrainCaveatFavorite" TableName="" MethodName="GetFavoriteCaveat">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="page" ObjectBrief="页码" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="rows" ObjectBrief="行数" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TrainCaveatList" ObjectBrief="报警记录列表" ObjectRemark="" TypeName="VIEW_Dat_TrainCaveatList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="添加机车关注" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAttention.AddTrainAttention" APIVersion="" TypeName="IFAttention" TableName="" MethodName="AddTrainAttention">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TrainAttention" ObjectBrief="机车关注类" ObjectRemark="" TypeName="TrainAttention"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="删除机车关注" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAttention.DeleteTrainAttention" APIVersion="" TypeName="IFAttention" TableName="" MethodName="DeleteTrainAttention">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_TrainAttention" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_TrainAttention" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_TrainAttention" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="添加关注司机" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAttention.AddTrainerAttention" APIVersion="" TypeName="IFAttention" TableName="" MethodName="AddTrainerAttention">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TrainerAttention" ObjectBrief="司机关注类" ObjectRemark="" TypeName="TrainerAttention"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="删除关注司机" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAttention.DeleteTrainerAttention" APIVersion="" TypeName="IFAttention" TableName="" MethodName="DeleteTrainerAttention">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_TrainerAttention" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="TAB_TrainerAttention" ObjectName="AttentionUserNumber" ObjectBrief="关注的用户id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取机车关注列表和司机关注列表" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAttention.GetAttentionList" APIVersion="" TypeName="IFAttention" TableName="" MethodName="GetAttentionList">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TrainAttentionList" ObjectBrief="机车关注列表" ObjectRemark="" TypeName="TrainAttentionList"/>
+            <PropertyObject TableName="" ObjectName="TrainerAttentionList" ObjectBrief="司机关注列表" ObjectRemark="" TypeName="TrainerAttentionList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取关注报警列表" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAttention.GetAttentionCaveatList" APIVersion="" TypeName="IFAttention" TableName="" MethodName="GetAttentionCaveatList">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserID" ObjectBrief="用户id" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="page" ObjectBrief="页码" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="rows" ObjectBrief="行数" ObjectRemark="" TypeName="int"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="TrianCaveatList" ObjectBrief="报警集合" ObjectRemark="" TypeName="VIEW_Dat_TrainCaveatList"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+      </APIType>
+      <APIType TypeBrief="程序版本升级" TypeOrder="0" AssemblyName="TF.ZCZT.Interface.AppVersionUpdate" TypeName="">
+        <APIItem APIBrief="获取安卓端程序路径" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFAndroidApp.GetAndroidAppFilePath" APIVersion="" TypeName="IFAndroidApp" TableName="" MethodName="GetAndroidAppFilePath">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="TAB_AppVersion" ObjectName="strAppVersion" ObjectBrief="app版本号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strAppFilePath" ObjectBrief="程序路径" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strAppName" ObjectBrief="版本名称" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strAppUpdateMark" ObjectBrief="更新日志" ObjectRemark="" TypeName="string"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="更新设备程序版本号" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-08-10 17:05:37" APIName="TF.ZCZT.Interface.IFDeviceApp.UpdateDeviceAppVersion" APIVersion="" TypeName="IFDeviceApp" TableName="" MethodName="UpdateDeviceAppVersion">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="AVersion" ObjectBrief="a机版本号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="BVersion" ObjectBrief="b机版本号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="MainVersion" ObjectBrief="主机版本号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="nType" ObjectBrief="1代表av4, 2代表av4Exp" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strVersion" ObjectBrief="版本号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="检查设备程序版本 " CreateDate="2015-11-10 17:33:51" ModifyDate="2017-08-10 16:40:05" APIName="TF.ZCZT.Interface.IFDeviceApp.ExistDeviceAppVersion" APIVersion="" TypeName="IFDeviceApp" TableName="" MethodName="ExistDeviceAppVersion">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="DeviceVersion" ObjectBrief="设备版本" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="DeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="nType" ObjectBrief="程序分类" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strTrainType" ObjectBrief="车型" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strTrainNumber" ObjectBrief="车号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="bUpdate" ObjectBrief="是否需要升级" ObjectRemark="" TypeName="int"/>
+            <PropertyObject TableName="" ObjectName="strUpdateUrl" ObjectBrief="程序地址" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strFileVersion" ObjectBrief="版本号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strMD5" ObjectBrief="升级包MD5值" ObjectRemark="" TypeName="string"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+      </APIType>
+      <APIType TypeBrief="视频直播" TypeOrder="0" AssemblyName="TF.ZCZT.Interface.VideoLive" TypeName="">
+        <APIItem APIBrief="设置视频准备完成" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-07-28 16:35:17" APIName="TF.ZCZT.Interface.IFVideoPush.setVideoIsReady" APIVersion="" TypeName="IFVideoPush" TableName="" MethodName="setVideoIsReady">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strVideoPort" ObjectBrief="通道号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="播放请求" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFVideoPush.PlayRequest" APIVersion="" TypeName="IFVideoPush" TableName="" MethodName="PlayRequest">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0"/>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="检查是否有播放请求" CreateDate="2015-11-10 17:33:51" ModifyDate="2017-07-28 16:35:25" APIName="TF.ZCZT.Interface.IFVideoPush.CheckPlayRequest" APIVersion="" TypeName="IFVideoPush" TableName="" MethodName="CheckPlayRequest">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+            <PropertyObject TableName="" ObjectName="strVideoPort" ObjectBrief="通道号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="nIsPush" ObjectBrief="是否推送" ObjectRemark="" TypeName="string"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="检查是否准备就绪" CreateDate="2015-11-10 17:33:51" ModifyDate="2015-11-10 17:33:51" APIName="TF.ZCZT.Interface.IFVideoPush.CheckVideoIsReady" APIVersion="" TypeName="IFVideoPush" TableName="" MethodName="CheckVideoIsReady">
+          <InputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="strDeviceNumber" ObjectBrief="设备号" ObjectRemark="" TypeName="string"/>
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="nIsReady" ObjectBrief="是否准备完成" ObjectRemark="" TypeName="int"/>
+          </OutputData>
+          <APITestData/>
+          <RemarkNode></RemarkNode>
+        </APIItem>
+      </APIType>
+
+      <APIType TypeBrief="基础信息接口" TypeOrder="0" AssemblyName="TF.YA.Base" TypeName="LCBaseIF">
+        <APIItem APIBrief="获取所有车站信息" APIName="TF.YA.Org.GetAllStations" APIVersion="" TypeName="LCBaseIF" TableName="" MethodName="GetAllStations">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCBaseIF" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="PageIndex" ObjectBrief="分页序号" ObjectRemark="" TypeName="int" />
+            <PropertyObject TableName="" ObjectName="PageCount" ObjectBrief="每页数量" ObjectRemark="" TypeName="int" />
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取所有地点信息" APIName="TF.YA.Org.GetAllPlaces" APIVersion="" TypeName="LCBaseIF" TableName="" MethodName="GetAllPlaces">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCBaseIF" TypeSort="0">
+
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+      </APIType>
+      <APIType TypeBrief="组织结构接口" TypeOrder="0" AssemblyName="TF.YA.Org" TypeName="LCOrgIF">
+        <APIItem APIBrief="获取所有部门信息" APIName="TF.YA.Org.GetAllDepts" APIVersion="" TypeName="LCOrgIF" TableName="" MethodName="GetAllDepts">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCOrgIF" TypeSort="0">
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取所有人员信息" APIName="TF.YA.Org.GetAllUsers" APIVersion="" TypeName="LCOrgIF" TableName="" MethodName="GetAllUsers">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCOrgIF" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="PageIndex" ObjectBrief="分页序号" ObjectRemark="" TypeName="int" />
+            <PropertyObject TableName="" ObjectName="PageCount" ObjectBrief="每页数量" ObjectRemark="" TypeName="int" />
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="获取所有岗位信息" APIName="TF.YA.Org.GetAllPosts" APIVersion="" TypeName="LCOrgIF" TableName="" MethodName="GetAllPosts">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCOrgIF" TypeSort="0">
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="后去用户所有特征信息" APIName="TF.YA.Org.GetUserFeatures" APIVersion="" TypeName="LCOrgIF" TableName="" MethodName="GetUserFeatures">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCOrgIF" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserNumber" ObjectBrief="用户工号" ObjectRemark="" TypeName="string" />
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+        <APIItem APIBrief="修改人员指纹特征" APIName="TF.YA.Org.UpdateUserFeature" APIVersion="" TypeName="LCOrgIF" TableName="" MethodName="UpdateUserFeature">
+          <InputData ObjectName="Action" ObjectBrief="" ObjectRemark="" TypeName="LCOrgIF" TypeSort="0">
+            <PropertyObject TableName="" ObjectName="UserNumber" ObjectBrief="用户工号" ObjectRemark="" TypeName="string" />
+            <PropertyObject TableName="" ObjectName="FeatureType" ObjectBrief="特征类型" ObjectRemark="" TypeName="int" />
+            <PropertyObject TableName="" ObjectName="FeatureContent" ObjectBrief="特征内容" ObjectRemark="" TypeName="string" />
+            <PropertyObject TableName="" ObjectName="FeatureIndex" ObjectBrief="特征序号" ObjectRemark="" TypeName="int" />
+          </InputData>
+          <OutputData ObjectName="" ObjectBrief="" ObjectRemark="" TypeName="" TypeSort="0">
+          </OutputData>
+          <RemarkNode>
+          </RemarkNode>
+        </APIItem>
+      </APIType>
+    </APIList>
+  </Project>
+</WebAPI>
